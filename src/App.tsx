@@ -26,7 +26,7 @@ export function App() {
 
     await employeeUtils.fetchAll();
     const response = await paginatedTransactionsUtils.fetchAll();
-    setHasMoreTransactions(response?.nextPage !== null);
+    setHasMoreTransactions(response!== null);
 
     setIsLoading(false);
   }, [employeeUtils, paginatedTransactionsUtils, transactionsByEmployeeUtils]);
@@ -48,7 +48,7 @@ export function App() {
   }, [employeeUtils.loading, employees, loadAllTransactions]);
 
   const handleSelectChange = useCallback(
-    async (newValue) => {
+    async (newValue: { id: string; } | null) => {
       if (newValue === null) {
         return;
       }

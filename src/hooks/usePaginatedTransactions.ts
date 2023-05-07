@@ -37,7 +37,7 @@ export function usePaginatedTransactions(): PaginatedTransactionsResult {
   return {
     data: {
       data: allTransactions,
-      nextPage: paginatedTransactions ? paginatedTransactions.nextPage : true,
+      nextPage: paginatedTransactions ? paginatedTransactions.nextPage : null,
     },
     loading,
     fetchAll,
